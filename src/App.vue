@@ -1,20 +1,14 @@
 <template>
   <div id="app">
-    <ButtonTest>WTF?</ButtonTest>
-    <FirstTitle></FirstTitle>
+    <Button>Click me</Button>
   </div>
 </template>
 
 <script>
-import ButtonTest from "./components/Button.js";
-import FirstTitle from "./components/FirstTitle";
-
+import Button from "./components/Button";
 export default {
   name: "App",
-  components: {
-    ButtonTest,
-    FirstTitle,
-  },
+  components: { Button },
 };
 </script>
 
