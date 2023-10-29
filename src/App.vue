@@ -1,18 +1,17 @@
 <template>
   <div :id="$style.app">
     <h1>{{ title }}</h1>
-    <Button @click="increment">Click me</Button>
-    <DirectivesTest></DirectivesTest>
+
+    <StarRating :rating="4.5" />
   </div>
 </template>
 
 <script>
-import Button from "./components/Button";
-import DirectivesTest from "./components/DirectivesTest";
+import StarRating from "./components/StarRating";
 
 export default {
   name: "App",
-  components: { Button, DirectivesTest },
+  components: { StarRating },
   data() {
     return {
       amountOfClicks: 0,
