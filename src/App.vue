@@ -1,21 +1,19 @@
 <template>
   <div :id="$style.app">
-    <ApartmentsItem
-      :description="apartment.descr"
-      :price="apartment.price"
-      :rating="apartment.rating"
-      imgSrc="https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2019/CA-Chris-Ogonek-Picture-Controls/Media/Chris-Ogonek-Picture-Controls-Vivid.jpg"
-    />
+    <ApartmentsList :items="apartments" />
   </div>
 </template>
 
 <script>
-import ApartmentsItem from '@/components/apartment/ApartmentsItem';
+import ApartmentsList from '@/components/apartment/ApartmentsList';
+
+import apartments from '@/components/apartment/apartments.js';
 export default {
   name: 'App',
-  components: { ApartmentsItem },
+  components: { ApartmentsList },
   data() {
     return {
+      apartments,
       apartment: {
         id: '5f05c9dad2c9bc0f773444bc',
         title:
