@@ -6,6 +6,7 @@
       :value="text"
       @input="event => (text = event.target.value)"
     /> -->
+    <CustomSelect :items="['name', 'label', 'salary']" />
     <CustomInput v-model="text" />
     <ApartmentsList :items="apartments">
       <template v-slot:apartment="{ apartment }">
@@ -26,11 +27,12 @@
 import ApartmentsList from '@/components/apartment/ApartmentsList';
 import ApartmentsItem from '@/components/apartment/ApartmentsItem';
 import CustomInput from '@/components/shared/CustomInput';
+import CustomSelect from '@/components/shared/CustomSelect';
 import apartments from '@/components/apartment/apartments.js';
 
 export default {
   name: 'App',
-  components: { ApartmentsList, ApartmentsItem, CustomInput },
+  components: { ApartmentsList, ApartmentsItem, CustomInput, CustomSelect },
   data() {
     return {
       text: '',
