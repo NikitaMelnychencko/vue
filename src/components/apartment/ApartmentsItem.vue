@@ -10,6 +10,7 @@
           <StarRating :rating="rating" />
         </div>
         <div class="apartments-item__price">UAH {{ price }}</div>
+        <a href="/" @click.prevent.stop="handelLink">home</a>
       </div>
     </div>
   </div>
@@ -39,6 +40,14 @@ export default {
     imgSrc: {
       type: String,
       default: '',
+    },
+  },
+  methods: {
+    log() {
+      console.log('click');
+    },
+    handelLink(e) {
+      console.log(e);
     },
   },
 };

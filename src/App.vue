@@ -8,6 +8,7 @@
           :rating="apartment.rating"
           :imgSrc="apartment.imgUrl"
           :price="apartment.price"
+          @click.native="handelItemClick"
         />
       </template>
     </ApartmentsList>
@@ -26,6 +27,11 @@ export default {
     return {
       apartments,
     };
+  },
+  methods: {
+    handelItemClick() {
+      console.log('item click');
+    },
   },
 };
 </script>
