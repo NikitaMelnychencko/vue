@@ -1,13 +1,10 @@
 <template>
-  <div :id="$style.app">
+  <div id="app">
     <h2>{{ text }}</h2>
-    <!-- <input
-      type="text"
-      :value="text"
-      @input="event => (text = event.target.value)"
-    /> -->
-    <CustomSelect :items="['name', 'label', 'salary']" />
-    <CustomInput v-model="text" />
+    <Container>
+      <ApartmentFilterForm class="apartments-filter" @submit="logger"
+    /></Container>
+
     <ApartmentsList :items="apartments">
       <template v-slot:apartment="{ apartment }">
         <ApartmentsItem
@@ -26,13 +23,17 @@
 <script>
 import ApartmentsList from '@/components/apartment/ApartmentsList';
 import ApartmentsItem from '@/components/apartment/ApartmentsItem';
-import CustomInput from '@/components/shared/CustomInput';
-import CustomSelect from '@/components/shared/CustomSelect';
+import ApartmentFilterForm from '@/components/apartment/ApartmentFilterForm';
 import apartments from '@/components/apartment/apartments.js';
-
+import Container from './components/shared/Container';
 export default {
   name: 'App',
-  components: { ApartmentsList, ApartmentsItem, CustomInput, CustomSelect },
+  components: {
+    ApartmentsList,
+    ApartmentsItem,
+    ApartmentFilterForm,
+    Container,
+  },
   data() {
     return {
       text: '',
@@ -40,14 +41,14 @@ export default {
     };
   },
   methods: {
-    handelItemClick() {
-      console.log('item click');
+    logger(value) {
+      console.log(value, '---form value');
     },
   },
 };
 </script>
 
-<style module>
+<style lang="scss" scoped>
 #app {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -55,5 +56,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.apartments-filter {
+  margin-bottom: 40px;
 }
 </style>

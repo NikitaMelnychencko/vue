@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper-input">
-    <input v-on="listeners" class="custom-input" />
+    <input v-on="listeners" class="custom-input" v-bind="$attrs" />
     <!-- <span v-if="!isValid" class="custom-input__error">{{ error }}</span> -->
   </div>
 </template>
