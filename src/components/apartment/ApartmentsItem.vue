@@ -10,7 +10,10 @@
           <StarRating :rating="rating" />
         </div>
         <div class="apartments-item__price">UAH {{ price }}</div>
-        <a href="/" @click.prevent.stop="handelLink">home</a>
+        <router-link
+          class="apartments-item__link"
+          :to="{ name: 'apartment' }"
+        ></router-link>
       </div>
     </div>
   </div>
